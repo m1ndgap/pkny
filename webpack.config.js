@@ -1,5 +1,6 @@
 const path = require(`path`);
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 
 module.exports = {
@@ -10,9 +11,17 @@ module.exports = {
     },
     devServer: {
         host: '0.0.0.0',
+        // watchFiles: {
+        //     paths: ['src/svgs/**/*.svg','src/fonts/**/*.woff','src/fonts/**/*.woff2'],
+        //     // options: {
+        //     //     usePolling: false,
+        //     // },
+        // },
         disableHostCheck: true,
+        historyApiFallback: true,
         useLocalIp: true,
         contentBase: path.join(__dirname, `public`),
+
         open: false,
         port: 1337,
     },
@@ -34,6 +43,7 @@ module.exports = {
                         loader: "css-loader",
                         options: {
                             sourceMap: true,
+                            url: false,
                         },
                     },
                     {
@@ -59,6 +69,10 @@ module.exports = {
                     },
                 ]
             },
+            {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader',
+            }
         ],
     },
     plugins: [
@@ -66,6 +80,11 @@ module.exports = {
             filename: "css/style.css",
             chunkFilename: "[id].css",
         }),
+        // new SVGSpritemapPlugin( './src/svgs/**/*.svg' ,{
+        //     output: {
+        //         filename: "./img/svg-sprite.svg"
+        //     },
+        // }),
     ],
     devtool: `source-map`,
 };

@@ -1,0 +1,44 @@
+.about-me
+
+  &__wrap
+    margin-top: auto
+
+  &__text
+    margin-bottom: 1.4rem
+    font-size: 1.6rem
+    line-height: 2.4rem
+    font-family: "Roboto", sans-serif
+    font-weight: 400
+    color: $white
+
+  &__links
+    @include resetlist()
+    margin-bottom: 0.2rem
+    display: flex
+    flex-flow: row wrap
+
+  &__element
+    flex-basis: 50%
+    margin-bottom: 1.4rem
+
+  &__link
+    display: flex
+    align-items: center
+    color: $white
+
+    svg
+      margin-right: 1.1rem
+      fill: $white
+      transition: fill $transition
+    span
+      transition: all $transition
+
+    &:hover
+      span
+        color: darken($white, 10%)
+        text-decoration-color: darken($white, 10%)
+      svg
+        fill: darken($white, 10%)
+
+  &__copyright
+    opacity: 0.5

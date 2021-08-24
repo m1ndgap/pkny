@@ -1,0 +1,55 @@
+.nav-wrap
+  display: flex
+  flex-flow: column nowrap
+  width: 400px
+  height: 860px
+  padding: 39px 39px 38px  39px
+  background-image: radial-gradient($webd, $webd)
+  color: $white
+
+.nav
+
+.nav-list
+  @include resetlist()
+  margin: 0 -15px 0 -15px
+  list-style: none
+
+.nav-el
+
+.nav-link
+  position: relative
+  display: block
+  padding: 1.52rem 0 1.52rem 1.5rem
+  text-decoration: none
+  color: $white
+  font-size: 2rem
+  font-family: "PT Mono", serif
+  font-weight: 400
+  transition: background-color $transition, font-weight $transition*2
+  &:after
+    content: ""
+    position: absolute
+    right: 16px
+    top: 50%
+    width: 0
+    height: 0
+    border-top: 6px solid transparent
+    border-bottom: 6px solid transparent
+    border-left: 11px solid $white
+    opacity: 0
+    transform: translate(30px, -50%)
+    transition: transform $transition, opacity $transition
+
+  &.active
+    text-shadow: 0 0 1px $white, 0 0 1px $white
+    background-color: rgba(255, 255, 255, 0.15)
+    transition: background-color $transition, text-shadow $transition
+    &:after
+      opacity: 1
+      transform: translate(0, -50%)
+
+  &:hover
+    background-color: rgba(255, 255, 255, 0.15)
+
+.nav__logo
+  margin: 3px 0 16px 0
