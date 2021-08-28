@@ -11,9 +11,6 @@ import PknyLogo from '../../svgs/pkny-logo.svg'
 import AboutMe from "../AboutMe/AboutMe.jsx"
 
 
-
-
-
 const Nav = () => {
     const gradientContainer = createRef();
     const [ prevColor, setPrevColor ] = useState(null);
@@ -24,9 +21,13 @@ const Nav = () => {
         const navWrap = document.querySelector('.nav-wrap')
         const linkEls = Array.from(document.querySelectorAll('.nav-link'));
         const currentLink = linkEls.filter(link => link.classList.contains('active') === true);
-        const color = currentLink[0].dataset.color;
-        navWrap.style.backgroundColor = color;
-        setPrevColor(color);
+        if (currentLink) {
+            const color = currentLink[0].dataset.color;
+            navWrap.style.backgroundColor = color;
+            setPrevColor(color);
+        } else {
+            console.log('whoops')
+        }
     })
 
     const changeColor = (e) => {
