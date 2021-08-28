@@ -1,53 +1,66 @@
-import React, { createRef, useState } from "react";
+import React, { createRef, useState, useEffect } from "react";
 
 import {
     BrowserRouter as Router,
     Switch,
     Route,
+    useLocation,
     NavLink
 } from "react-router-dom";
 import PknyLogo from '../../svgs/pkny-logo.svg'
 import AboutMe from "../AboutMe/AboutMe.jsx"
 
+
+
+
+
 const Nav = () => {
     const gradientContainer = createRef();
     const [ prevColor, setPrevColor ] = useState(null);
 
+    const location = useLocation();
+
+    useEffect(() => {
+        const navWrap = document.querySelector('.nav-wrap')
+        const linkEls = Array.from(document.querySelectorAll('.nav-link'));
+        const currentLink = linkEls.filter(link => link.classList.contains('active') === true);
+        const color = currentLink[0].dataset.color;
+        navWrap.style.backgroundColor = color;
+        setPrevColor(color);
+    })
+
     const changeColor = (e) => {
-
-        console.log(e.target.closest(`.nav-wrap`));
-
         const rect = e.target.closest(`.nav-wrap`).getBoundingClientRect();
-
-        console.log(rect);
-
         const newBgc = e.currentTarget.dataset['color'];
-
         const gradientContEl = gradientContainer.current
-
         const gradientEl = document.createElement("div");
-        gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 43%, transparent 71%)`
         gradientEl.style.top = `${e.clientY - rect.top - 150}px`
         gradientEl.style.left = `${e.clientX - rect.left - 150}px`
 
+        if (prevColor === newBgc) {
+            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0.01) 71%)`
+        } else {
+            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 43%, rgba(0,0,0,0.01) 71%)`
+        }
         gradientEl.classList.add("nav-bg-gradient")
         gradientEl.addEventListener("animationend", () => {
             gradientContEl.style.backgroundColor = newBgc
             gradientEl.remove();
         });
-
         gradientContEl.append(gradientEl);
-        // navEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 14%, ${prevColor ? prevColor : "transparent"} 50%)`
-        // navEl.style.animationName = `gradientBG`
-        //navColor.current.style.backgroundSize = "1000%";
-        //oldSchool.style.backgroundImage = gradient;
-        //navColor.current.style.border = `1px solid ${prevColor}`;
 
         setPrevColor(newBgc);
     }
 
+    const ping = (e) => {
+        e.target
+        if (e.target) {
+
+        }
+    }
+
     return (
-        <div className={"nav-wrap"}>
+        <div className={"nav-wrap"} onClick={ping}>
             <div ref={gradientContainer} className="gradient-container"> </div>
             <h2 className={"logo nav__logo"}>
                     <svg width="100" height="37" viewBox="0 0 100 37" fill="none" xmlns="http://www.w3.org/2000/svg">

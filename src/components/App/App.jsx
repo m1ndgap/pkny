@@ -8,6 +8,11 @@ import {
 
 
 import Nav from "../Nav/Nav.jsx"
+import WebDesign from "../WebDesign/WebDesign.jsx"
+import GraphDesign from "../GraphDesign/GraphDesign.jsx"
+import Print from "../Print/Print.jsx"
+import Branding from "../Branding/Branding.jsx"
+import UI from "../UI/UI.jsx"
 
 const App = () => {
     return (
@@ -15,12 +20,10 @@ const App = () => {
             <div className={"main-wrap"}>
                 <Nav />
 
-                {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
                 <main className="main">
                     <Switch>
                         <Route path="/design">
-                            <Graphdesign  />
+                            <GraphDesign />
                         </Route>
                         <Route path="/print">
                             <Print />
@@ -29,10 +32,10 @@ const App = () => {
                             <Branding />
                         </Route>
                         <Route path="/ui">
-                            <Interfaces />
+                            <UI />
                         </Route>
                         <Route path="/">
-                            <Webdesign />
+                            <WebDesign />
                         </Route>
                     </Switch>
                 </main>
@@ -41,27 +44,5 @@ const App = () => {
     );
 }
 
-function Webdesign() {
-    return <h2>Web</h2>;
-}
-
-function Print() {
-    useEffect(() => {
-    })
-
-    return <h2>Print</h2>;
-}
-
-function Graphdesign() {
-    return <h2>Graph</h2>;
-}
-
-function Branding() {
-    return <h2>Branding</h2>;
-}
-
-function Interfaces() {
-    return <h2>UI</h2>;
-}
 
 export default App;
