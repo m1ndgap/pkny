@@ -22,6 +22,7 @@ const Nav = () => {
         const linkEls = Array.from(document.querySelectorAll('.nav-link'));
         const currentLink = linkEls.filter(link => link.classList.contains('active') === true);
         if (currentLink) {
+            console.log(currentLink)
             const color = currentLink[0].dataset.color;
             navWrap.style.backgroundColor = color;
             setPrevColor(color);
