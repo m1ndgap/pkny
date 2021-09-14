@@ -9,11 +9,13 @@ import {
 } from "react-router-dom";
 import PknyLogo from '../../svgs/pkny-logo.svg'
 import AboutMe from "../AboutMe/AboutMe.jsx"
+import data from "../../mocks/content.js";
 
 
 const Nav = () => {
     const gradientContainer = createRef();
     const [ prevColor, setPrevColor ] = useState(null);
+
 
     const location = useLocation();
 
@@ -22,12 +24,13 @@ const Nav = () => {
         const linkEls = Array.from(document.querySelectorAll('.nav-link'));
         const currentLink = linkEls.filter(link => link.classList.contains('active') === true);
         if (currentLink.length > 0) {
-            console.log(currentLink)
             const color = currentLink[0].dataset.color;
             navWrap.style.backgroundColor = color;
+            gradientContainer.current.style.backgroundColor = color;
             setPrevColor(color);
         } else {
-            console.log('whoops')
+            gradientContainer.current.style.backgroundColor = '#1BBD5C';
+            setPrevColor('#1BBD5C')
         }
     })
 
@@ -39,14 +42,19 @@ const Nav = () => {
         gradientEl.style.top = `${e.clientY - rect.top - 150}px`
         gradientEl.style.left = `${e.clientX - rect.left - 150}px`
 
+        console.log(newBgc)
+        console.log(prevColor)
+
         if (prevColor === newBgc) {
             gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0.01) 71%)`
         } else {
-            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 43%, rgba(0,0,0,0.01) 71%)`
+            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 43%, ${prevColor} 71%)`
         }
         gradientEl.classList.add("nav-bg-gradient")
         gradientEl.addEventListener("animationend", () => {
+            console.log("painting")
             gradientContEl.style.backgroundColor = newBgc
+            console.log("deleting")
             gradientEl.remove();
         });
         gradientContEl.append(gradientEl);
@@ -63,7 +71,7 @@ const Nav = () => {
 
     return (
         <div className={"nav-wrap"} onClick={ping}>
-            <div ref={gradientContainer} className="gradient-container"> </div>
+            <div ref={gradientContainer} className="gradient-container" > </div>
             <h2 className={"logo nav__logo"}>
                     <svg width="100" height="37" viewBox="0 0 100 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21.4922 8.36154C20.7382 7.4959 19.7848 6.82942 18.7156 6.42041C17.5684 5.9985 16.3549 5.78894 15.1336 5.80183C11.8518 5.80183 9.4779 6.85415 8.01188 8.95881H7.84232L7.20648 6.3991H0V11.0919H3.17932V36.2625H8.64776V27.5168C9.31843 27.8315 10.0334 28.0402 10.7673 28.1354C11.6233 28.2639 12.4877 28.3281 13.3532 28.3274C14.8753 28.3539 16.3878 28.0784 17.8042 27.5168C19.0704 26.9999 20.2017 26.1971 21.1107 25.1704C22.0511 24.0832 22.7582 22.8124 23.1878 21.4374C23.6881 19.8443 23.9314 18.1807 23.9085 16.51C23.9397 14.887 23.7253 13.2686 23.2726 11.7105C22.9208 10.4802 22.314 9.33882 21.4922 8.36154ZM17.8254 19.667C17.588 20.4946 17.184 21.2642 16.6385 21.9281C16.1601 22.5023 15.5486 22.9492 14.858 23.2292C14.1557 23.5046 13.4074 23.6422 12.6537 23.6345C11.8893 23.6353 11.1277 23.5422 10.3858 23.3572C9.76839 23.2305 9.18377 22.9763 8.66894 22.6106V13.7369C8.95679 12.7213 9.6155 11.8527 10.513 11.3052C11.4016 10.7658 12.4215 10.4852 13.4591 10.4946C14.1087 10.4795 14.7534 10.6094 15.3471 10.8749C15.9408 11.1405 16.4687 11.5351 16.8928 12.0305C17.8007 13.0544 18.2528 14.5049 18.2493 16.382C18.2711 17.4921 18.1283 18.5993 17.8254 19.667Z" fill="white"/>
@@ -77,38 +85,38 @@ const Nav = () => {
                     <li className={"nav-el"}>
                         <NavLink
                             className={"nav-link"}
-                            data-color={"#1BBD5C"}
+                            data-color={data.webdesign.color}
                             onClick={changeColor}
                             exact={true}
-                            to="/">веб-дизайн</NavLink>
+                            to="/">{data.webdesign.title}</NavLink>
                     </li>
                     <li className={"nav-el"}>
                         <NavLink
                             className={"nav-link"}
-                            data-color={"#1E9FD7"}
+                            data-color={data.graphd.color}
                             onClick={changeColor}
-                            to="/design">графический дизайн</NavLink>
+                            to="/design">{data.graphd.title}</NavLink>
                     </li>
                     <li className={"nav-el"}>
                         <NavLink
                             className={"nav-link"}
-                            data-color={"#1C43D0"}
+                            data-color={data.print.color}
                             onClick={changeColor}
-                            to="/print">печатная продукция</NavLink>
+                            to="/print">{data.print.title}</NavLink>
                     </li>
                     <li className={"nav-el"}>
                         <NavLink
                             className={"nav-link"}
-                            data-color={"#B41DDA"}
+                            data-color={data.branding.color}
                             onClick={changeColor}
-                            to="/branding">брендинг</NavLink>
+                            to="/branding">{data.branding.title}</NavLink>
                     </li>
                     <li className={"nav-el"}>
                         <NavLink
                             className={"nav-link"}
-                            data-color={"#DC186A"}
+                            data-color={data.ui.color}
                             onClick={changeColor}
-                            to="/ui">интерфейсы</NavLink>
+                            to="/ui">{data.ui.title}</NavLink>
                     </li>
                 </ul>
             </nav>

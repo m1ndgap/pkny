@@ -13,9 +13,7 @@ const GraphDesign = () => {
                     <p>Перед вами лишь некоторые из моих работ:</p>
                 </div>
             </div>
-            <Slider
 
-            />
         </article>
     )
 }

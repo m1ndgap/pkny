@@ -1,0 +1,46 @@
+.sliders-wrap
+  position: relative
+  margin-top: auto
+  width: 100%
+  height: 540px
+
+.text-slider
+  width: calc(100% - 80px)
+  height: 50px
+  position: absolute !important
+  left: 50%
+  top: 4rem
+  transform: translateX(-50%)
+
+  .swiper-slide
+    padding: 9px 0 7px 16px
+    color: $white
+    font-family: "PT Mono", serif
+    p
+      margin: 0
+      font-size: 1.4rem
+    p + p
+      margin-top: 3px
+
+.slider__btn-wrap
+  position: absolute
+  bottom: 4.4rem
+  left: 50%
+  z-index: 2
+  transform: translateX(-50%)
+
+  button
+    width: 50px
+    height: 50px
+    outline: none
+    border: none
+    cursor: pointer
+    opacity: 1
+    transition: opacity $transition
+    svg
+      fill: $white
+    &:hover
+      opacity: 0.8
+
+  button + button
+    margin-left: 1rem

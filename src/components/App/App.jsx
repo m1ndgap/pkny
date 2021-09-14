@@ -8,11 +8,12 @@ import {
 
 
 import Nav from "../Nav/Nav.jsx"
-import WebDesign from "../WebDesign/WebDesign.jsx"
+import MainContent from "../WebDesign/MainContent.jsx"
 import GraphDesign from "../GraphDesign/GraphDesign.jsx"
 import Print from "../Print/Print.jsx"
 import Branding from "../Branding/Branding.jsx"
 import UI from "../UI/UI.jsx"
+import content from "../../mocks/content.js"
 
 const App = () => {
     return (
@@ -23,19 +24,29 @@ const App = () => {
                 <main className="main">
                     <Switch>
                         <Route path="/design">
-                            <GraphDesign />
+                            <MainContent
+                                data={content.graphd}
+                            />
                         </Route>
                         <Route path="/print">
-                            <Print />
+                            <MainContent
+                                data={content.print}
+                            />
                         </Route>
                         <Route path="/branding">
-                            <Branding />
+                            <MainContent
+                                data={content.branding}
+                            />
                         </Route>
                         <Route path="/ui">
-                            <UI />
+                            <MainContent
+                                data={content.ui}
+                            />
                         </Route>
                         <Route path="/">
-                            <WebDesign />
+                            <MainContent
+                                data={content.webdesign}
+                            />
                         </Route>
                     </Switch>
                 </main>

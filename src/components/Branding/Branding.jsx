@@ -13,9 +13,7 @@ const Branding = () => {
                     <p>Примеры моих работ – ниже:</p>
                 </div>
             </div>
-            <Slider
 
-            />
         </article>
     )
 }

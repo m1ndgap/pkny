@@ -16,6 +16,8 @@
   bottom: 0
   right: 0
   z-index: 1
+  transition: background-color $transition
+  background-color: $webd
 
 .nav-bg-gradient
   position: absolute
@@ -32,7 +34,8 @@
 .nav-bg-gradient--test
   height: 300px
   width: 300px
-  background-image: radial-gradient(circle at center, $webd 50%, transparent 100%)
+  animation: none
+  background-image: radial-gradient(circle at center, $webd 43%, transparent 71%)
 
 @keyframes gradient-grow
   0%

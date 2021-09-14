@@ -4,6 +4,7 @@ const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 
 module.exports = {
+    mode: 'development',
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
         filename: "bundle.js",
