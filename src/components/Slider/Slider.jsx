@@ -54,12 +54,18 @@ const Slider = (props) => {
                 key={2}
                 modules={[Navigation, A11y, Autoplay]}
                 slidesPerView={1}
+                speed={1000}
                 controller={{ control: controlledSwiper }}
                 navigation={{
                     nextEl: '.slider-next',
                     prevEl: '.slider-prev'}}
                 onSlideChange={() => {}}
-                autoplay = {{delay: 3000}}
+                autoplay = {{
+                    delay: 3000,
+                    duration: 1000,
+                    disableOnInteraction: true,
+
+                }}
                 onSwiper={(swiper) => console.log(swiper)}
             >
                 {mainSlidesMarkup}
