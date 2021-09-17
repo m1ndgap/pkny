@@ -67,6 +67,7 @@ const Slider = (props) => {
 
                 }}
                 onSwiper={(swiper) => console.log(swiper)}
+                className={"main-slider"}
             >
                 {mainSlidesMarkup}
                 <div className={"slider__btn-wrap"}>
