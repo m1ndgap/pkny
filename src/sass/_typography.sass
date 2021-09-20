@@ -3,7 +3,15 @@
   font-size: 4.4rem
   line-height: 4.4rem
   color: $black
+  @include media("<desktop")
+    font-size: 3.4rem
 
+.main__text
+  font-size: 1.6rem
+  line-height: 2.2rem
+  @include media("<desktop")
+    font-size: 1.2rem
+    line-height: 1.8rem
 
 .italics
   font-style: italic

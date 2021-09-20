@@ -8,10 +8,19 @@
   &__text
     margin-bottom: 1.4rem
     font-size: 1.6rem
-    line-height: 2.2rem
+    line-height: 2.4rem
+    padding-right: 23px
     font-family: "Roboto", sans-serif
     font-weight: 400
     color: $white
+    @include media("<large")
+      margin-bottom: 2.7rem
+    @include media("<desktop")
+      margin-bottom: 1.9rem
+      padding-right: 10px
+      font-size: 1.2rem
+      line-height: 1.8rem
+
 
   &__links
     @include resetlist()
@@ -33,6 +42,7 @@
       fill: $white
       transition: fill $transition
     span
+      font-size: 1.6rem
       transition: all $transition
 
     &:hover
@@ -41,6 +51,10 @@
         text-decoration-color: darken($white, 10%)
       svg
         fill: darken($white, 10%)
+
+    @include media("<large")
+      span
+        font-size: 1.2rem
 
   &__copyright
     opacity: 0.5

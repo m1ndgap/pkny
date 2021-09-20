@@ -5,14 +5,14 @@ import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 const Picture = (props) => {
-    console.log(props)
+
     let { img } = props
 
 
     return (
         <SwiperSlide>
             <picture>
-                <source srcSet={`./img/${img}`}
+                <source srcSet={`./img/${img} 1x,`}
                         media={"(min-width: 800px)"} />
                     <img src={`./img/${img}`}
                          alt={""} />

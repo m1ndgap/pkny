@@ -6,9 +6,6 @@ const MainContent = (props) => {
 
     const { title, text, images, color } = props.data;
 
-    console.log(images)
-    console.log(color)
-
     return (
         <article className={'main__section'}>
             <div className={'main__text-wrap'}>

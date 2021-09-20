@@ -4,6 +4,7 @@ import { Navigation, A11y, EffectFade, Controller, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import Picture from "./Picture.jsx"
+import { mobileImg, retinaImg } from "../toolbox.js"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,11 +17,15 @@ const Slider = (props) => {
     const [ textSwiper, setTextSwiper ] = useState(null)
     const [ controlledSwiper, setControlledSwiper ] = useState(null);
 
+    console.log(retinaImg(images[0].img))
+
     const mainSlidesMarkup = images.map(item =>
             <SwiperSlide>
                 <picture>
-                    <source srcSet={`./img/${item.img}`}
-                            media={"(min-width: 800px)"} />
+                    <source srcSet={`./img/${item.img} 1x, ./img/${retinaImg(item.img)} 2x`}
+                            media={"(min-width: 720px)"} />
+                    <source srcSet={`./img/${mobileImg(item.img)}`}
+                            media={"(max-width: 719px)"}/>
                     <img src={`./img/${item.img}`}
                          alt={item.imgAlt} />
                 </picture>
@@ -43,6 +48,7 @@ const Slider = (props) => {
                 effect="fade"
                 fadeEffect={"crossFade: true"}
                 slidesPerView={1}
+                allowTouchMove="false"
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={setControlledSwiper}
                 className={"text-slider"}
