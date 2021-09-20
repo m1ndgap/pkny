@@ -11,3 +11,25 @@
 - Main text is split into paragraphs with `<p></p>` tags.
 - Images are strings corresponding with files in `/public/img/` folder.
 - ImageDesc is an array containing two strings placed above
+
+
+## content.js
+
+### images naming convention
+
+All images should be named according to the following convention:
+
+**Regular image**
+```
+image-1.png
+```
+
+**Retina image**
+```
+image-1@2x.png
+```
+
+**Mobile image**
+```
+image-1-mobile@2x.png
+```
