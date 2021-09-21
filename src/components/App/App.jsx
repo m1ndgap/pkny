@@ -17,7 +17,7 @@ import content from "../../mocks/content.js"
 
 const App = () => {
     return (
-        <Router>
+        <Router forceRefresh={true}>
             <div className={"main-wrap"}>
                 <Nav />
 
