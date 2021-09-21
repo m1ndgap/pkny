@@ -83,7 +83,7 @@ const Slider = (props) => {
 
                 }}
                 onSwiper={(swiper) => {
-                    swiper.navigation.nextEl.style.transitionDuration = `${sliderRotationDelay}ms`
+                    swiper.navigation.nextEl.style.animationDuration = `${sliderRotationDelay}ms`
                     swiper.navigation.nextEl.classList.add('slider-next--animate')
                 }}
                 className={"main-slider"}
