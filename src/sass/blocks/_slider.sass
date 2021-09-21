@@ -1,3 +1,9 @@
+@keyframes animateBtnBG
+  from
+    background-position: 100% 0
+  to
+    background-position: 0 0
+
 .sliders-wrap
   position: relative
   margin-top: auto
@@ -64,6 +70,7 @@
     user-select: none
     pointer-events: none !important
     p
+      background-color: transparent
       margin: 0
       font-size: 1.4rem
       user-select: none
@@ -95,6 +102,16 @@
       fill: $white
     &:hover
       opacity: 0.8
+
+  .slider-next
+    background-size: 200% 100%
+    background-position: 100%
+    background-repeat: no-repeat
+
+  .slider-next--animate
+    transition-property: background-position
+    transition-timing-function: linear
+    background-position: 0
 
   button + button
     margin-left: 1rem
