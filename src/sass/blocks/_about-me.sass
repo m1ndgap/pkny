@@ -4,6 +4,12 @@
   &__wrap
     margin-top: auto
     z-index: 2
+    transition: opacity $transition/2
+    pointer-events: all
+
+    &--hidden
+      opacity: 0
+      pointer-events: none
 
   &__text
     margin-bottom: 1.4rem
@@ -36,9 +42,11 @@
     display: flex
     justify-content: center
     align-items: center
-    color: $white
     width: 45px
     height: 45px
+    margin-right: 5px
+    color: $white
+
 
     svg
       width: 28px

@@ -5,8 +5,8 @@ const AboutMe = (props) => {
     const { show } = props
 
     return (
-        <div className={"about-me__wrap"}>
-            <video loop preload autoPlay={true} height={"120px"}>
+        <div className={`about-me__wrap ${show ? 'about-me__wrap--hidden' : ''}`}>
+            <video loop autoPlay={true} height={"120px"}>
                 <source src="./img/animoji.webm"
                         type="video/webm" />
                 <source src="./img/animoji.mov"
