@@ -91,8 +91,8 @@ const Slider = (props) => {
                 {mainSlidesMarkup}
                 <div className={"slider__btn-wrap"}>
                     <button type={"button"} className={"slider-prev"} style={{backgroundColor: `${color}`}}>
-                        <svg width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.7071L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538406 7.04738 0.538406 6.65686 0.92893L0.292893 7.29289ZM26 7L1 7L1 9L26 9L26 7Z"/>
+                        <svg x="0px" y="0px" viewBox="0 0 64 64">
+                            <polygon points="48,28.5 24.4,28.5 30.9,22 26,17.1 11.1,32 26,46.9 30.9,42 24.4,35.5 48,35.5 "/>
                         </svg>
                     </button>
                     <button  type={"button"} className={"slider-next"}
@@ -100,8 +100,8 @@ const Slider = (props) => {
                                  backgroundImage: `linear-gradient(90deg, rgba(255, 255, 255, 0.1) 50%, ${color} 50%)`,
                                  backgroundColor: `${color}`
                              }}>
-                        <svg width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.29289L19.3431 0.928932C18.9526 0.538408 18.3195 0.538408 17.9289 0.928932C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM0 9L25 9V7L0 7L0 9Z" />
+                        <svg viewBox="0 0 64 64">
+                            <polygon points="38,17.1 33.1,22 39.5,28.5 16,28.5 16,35.5 39.5,35.5 33.1,42 38,46.9 52.9,32 "/>
                         </svg>
                     </button>
                 </div>
