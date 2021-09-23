@@ -1,8 +1,17 @@
 import React from "react";
 
-const AboutMe = () => {
+const AboutMe = (props) => {
+
+    const { show } = props
+
     return (
         <div className={"about-me__wrap"}>
+            <video loop preload autoPlay={true} height={"120px"}>
+                <source src="./img/animoji.webm"
+                        type="video/webm" />
+                <source src="./img/animoji.mov"
+                        type="video/mov" />
+            </video>
             <p className={"about-me__text"}>
                 Привет, меня зовут Глеб, мне 33 года.
                 Я живу в Санкт-Петербурге и уже больше 10 лет занимаюсь дизайном.
@@ -45,7 +54,7 @@ const AboutMe = () => {
 
             </ul>
             <small className={"about-me__copyright"}>
-                <span>2021 © pkny.ru | code by <a href="github.com/m1ndgap">mindgap</a></span>
+                <span>2021 © pkny.ru | code by <a href="https://github.com/m1ndgap">mindgap</a></span>
             </small>
         </div>
     )

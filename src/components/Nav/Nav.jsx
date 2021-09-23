@@ -53,9 +53,6 @@ const Nav = () => {
         setMobMenu(!mobMenu)
     }
 
-    const showMainFunc = () => {
-
-    }
 
     const changeColor = (e) => {
         const rect = e.target.closest(`.nav-wrap`).getBoundingClientRect();
@@ -80,15 +77,9 @@ const Nav = () => {
         setPrevColor(newBgc);
     }
 
-    const ping = (e) => {
-        e.target
-        if (e.target) {
-
-        }
-    }
 
     return (
-        <div className={"nav-wrap"} onClick={ping}>
+        <div className={"nav-wrap"}>
             <button className="nav__mobileBtn" onClick={toggleMobMenu}>X</button>
             <div ref={gradientContainer} className="gradient-container" > </div>
             <h2 className={"logo nav__logo"}>
@@ -139,7 +130,7 @@ const Nav = () => {
                     </li>
                 </ul>
             </nav>
-            <AboutMe />
+            <AboutMe show={mobMenu} />
         </div>
     )
 };

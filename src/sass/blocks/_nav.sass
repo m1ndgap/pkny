@@ -69,13 +69,15 @@
   @include media("<large")
     margin: 0 -20px
   @include media("<tablet")
+    position: absolute
     opacity: 0
     height: 0
     overflow: hidden
+    transition: height $transition
 
   &--show
     opacity: 1
-    height: unset
+    height: 400px
 
 
 // .nav-el
