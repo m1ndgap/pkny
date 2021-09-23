@@ -67,7 +67,7 @@ const Slider = (props) => {
                     nextEl: '.slider-next',
                     prevEl: '.slider-prev'}}
                 onSlideChangeTransitionEnd = {(swiper) => {
-                    console.log(swiper.navigation.nextEl)
+
                     if (swiper.autoplay.running){
                         swiper.navigation.nextEl.classList.add('slider-next--animate')
 

@@ -22,6 +22,8 @@
     width: 370px
     height: 330px
   @include media("<tablet")
+    width: 100%
+    height: 210px
 
 
   .swiper-wrapper
@@ -45,6 +47,8 @@
           // width: 120%
         @include media("<desktop")
           // width: 130%
+        @include media("<tablet")
+          width: 100%
 
 .text-slider
   width: calc(100% - 80px)
@@ -61,6 +65,9 @@
     width: calc(100% - 20px)
     top: 1.1rem
   @include media("<tablet")
+    width: 100%
+    bottom: 100%
+    top: unset
 
   .swiper-slide
     padding: 9px 0 7px 16px
@@ -75,6 +82,9 @@
       user-select: none
     p + p
       margin-top: 3px
+    @include media("<tablet")
+      p
+        font-size: 1.1rem
 
 .slider__btn-wrap
   position: absolute
@@ -101,6 +111,11 @@
       fill: $white
     &:hover
       opacity: 0.8
+    @include media("<tablet")
+      width: 30px
+      height: 30px
+      svg
+        width: 18px
 
   .slider-next
     background-size: 200% 100%

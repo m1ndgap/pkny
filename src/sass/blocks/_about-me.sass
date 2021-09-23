@@ -29,32 +29,43 @@
     flex-flow: row wrap
 
   &__element
-    flex-basis: 50%
-    margin-bottom: 1.4rem
+
+
 
   &__link
     display: flex
+    justify-content: center
     align-items: center
     color: $white
+    width: 45px
+    height: 45px
 
     svg
-      margin-right: 1.1rem
+      width: 28px
+      height: 28px
       fill: $white
-      transition: fill $transition
-    span
-      font-size: 1.6rem
-      transition: all $transition
+      transition: transform $transition
 
     &:hover
-      span
-        color: darken($white, 10%)
-        text-decoration-color: darken($white, 10%)
+      background-color: rgba(255, 255, 255, 0.1)
       svg
-        fill: darken($white, 10%)
+        transform: scale(1.1)
+
+    &--mail
+      padding-bottom: 1px
+      svg
+        width: 34px
+        height: 34px
+
+
 
     @include media("<large")
       span
         font-size: 1.2rem
 
   &__copyright
+    display: block
+    margin-top: 10px
     opacity: 0.5
+    a
+      color: $white

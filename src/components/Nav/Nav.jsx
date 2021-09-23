@@ -7,7 +7,6 @@ import {
     useLocation,
     NavLink
 } from "react-router-dom";
-import PknyLogo from '../../svgs/pkny-logo.svg'
 import AboutMe from "../AboutMe/AboutMe.jsx"
 import data from "../../mocks/content.js";
 
@@ -15,13 +14,16 @@ import data from "../../mocks/content.js";
 const Nav = () => {
     const gradientContainer = createRef();
     const [ prevColor, setPrevColor ] = useState(null);
+    const [ mobMenu, setMobMenu ] = useState(false);
+    const [ showMain, setShowMain] = useState(false);
 
+    // (window.matchMedia("(max-width: 767px)").matches)
 
     const location = useLocation();
 
     useEffect(() => {
         const navWrap = document.querySelector('.nav-wrap')
-        const linkEls = Array.from(document.querySelectorAll('.nav-link'));
+        const linkEls = Array.from(document.querySelectorAll('.nav__link'));
         const currentLink = linkEls.filter(link => link.classList.contains('active') === true);
         if (currentLink.length > 0) {
             const color = currentLink[0].dataset.color;
@@ -34,6 +36,27 @@ const Nav = () => {
         }
     })
 
+    useEffect(() => {
+        if (window.matchMedia("(max-width: 719px)").matches) {
+            const navItems = document.querySelectorAll('.nav__el');
+            const mainWrap = document.querySelector('.main');
+            mainWrap.classList.add('main--mobShow')
+            navItems.forEach((item) => {
+                item.addEventListener('click', () => {
+                    mainWrap.classList.add('main--mobShow')
+                })
+            })
+        }
+    },[])
+
+    const toggleMobMenu = () => {
+        setMobMenu(!mobMenu)
+    }
+
+    const showMainFunc = () => {
+
+    }
+
     const changeColor = (e) => {
         const rect = e.target.closest(`.nav-wrap`).getBoundingClientRect();
         const newBgc = e.currentTarget.dataset['color'];
@@ -42,9 +65,6 @@ const Nav = () => {
         gradientEl.style.top = `${e.clientY - rect.top - 150}px`
         gradientEl.style.left = `${e.clientX - rect.left - 150}px`
 
-        console.log(newBgc)
-        console.log(prevColor)
-
         if (prevColor === newBgc) {
             gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0.01) 71%)`
         } else {
@@ -52,9 +72,7 @@ const Nav = () => {
         }
         gradientEl.classList.add("nav-bg-gradient")
         gradientEl.addEventListener("animationend", () => {
-            console.log("painting")
             gradientContEl.style.backgroundColor = newBgc
-            console.log("deleting")
             gradientEl.remove();
         });
         gradientContEl.append(gradientEl);
@@ -71,6 +89,7 @@ const Nav = () => {
 
     return (
         <div className={"nav-wrap"} onClick={ping}>
+            <button className="nav__mobileBtn" onClick={toggleMobMenu}>X</button>
             <div ref={gradientContainer} className="gradient-container" > </div>
             <h2 className={"logo nav__logo"}>
                     <svg width="100" height="37" viewBox="0 0 100 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,39 +100,39 @@ const Nav = () => {
                     </svg>
             </h2>
             <nav className={"nav"}>
-                <ul className={"nav-list"}>
-                    <li className={"nav-el"}>
+                <ul className={`nav__list ${ mobMenu ? 'nav__list--show' : ' '}`}>
+                    <li className={"nav__el"}>
                         <NavLink
-                            className={"nav-link"}
+                            className={"nav__link"}
                             data-color={data.webdesign.color}
                             onClick={changeColor}
                             exact={true}
                             to="/">{data.webdesign.title}</NavLink>
                     </li>
-                    <li className={"nav-el"}>
+                    <li className={"nav__el"}>
                         <NavLink
-                            className={"nav-link"}
+                            className={"nav__link"}
                             data-color={data.graphd.color}
                             onClick={changeColor}
                             to="/design">{data.graphd.title}</NavLink>
                     </li>
-                    <li className={"nav-el"}>
+                    <li className={"nav__el"}>
                         <NavLink
-                            className={"nav-link"}
+                            className={"nav__link"}
                             data-color={data.print.color}
                             onClick={changeColor}
                             to="/print">{data.print.title}</NavLink>
                     </li>
-                    <li className={"nav-el"}>
+                    <li className={"nav__el"}>
                         <NavLink
-                            className={"nav-link"}
+                            className={"nav__link"}
                             data-color={data.branding.color}
                             onClick={changeColor}
                             to="/branding">{data.branding.title}</NavLink>
                     </li>
-                    <li className={"nav-el"}>
+                    <li className={"nav__el"}>
                         <NavLink
-                            className={"nav-link"}
+                            className={"nav__link"}
                             data-color={data.ui.color}
                             onClick={changeColor}
                             to="/ui">{data.ui.title}</NavLink>
@@ -123,6 +142,6 @@ const Nav = () => {
             <AboutMe />
         </div>
     )
-}
+};
 
 export default Nav;

@@ -5,6 +5,20 @@
   width: 780px
   background-color: $bg
   overflow: hidden
+  @include media("<tablet")
+    margin-left: 0
+    z-index: 4
+    position: absolute
+    top: 0
+    left: 100%
+    width: 280px
+    height: 360px
+
+.main--mobShow
+  @include media("<tablet")
+    position: absolute
+    top: unset
+    left: unset
 
 
 .main__section
@@ -12,12 +26,15 @@
   width: 100%
   flex-flow: column nowrap
 
+
+
 .main__section-title
   margin: 0 0 27px 0
   @include media("<large")
     margin: 0 0 16px 0
   @include media("<desktop")
     margin: 0 0 13px 0
+  @include media("<tablet")
 
 
 
@@ -28,9 +45,27 @@
   @include media("<desktop")
     padding: 1.6rem 2rem 0
 
+
 .main__text
   p
     margin: 10px 0
   p + p
     margin-top: 10px
   @include media("<desktop")
+  @include media("<tablet")
+    display: none
+
+.main__mobile-goback
+  display: none
+  @include media("<tablet")
+    display: block
+    width: 70px
+    height: 20px
+    margin: 15px 15px 0
+    appearance: none
+    background: none
+    border: none
+    cursor: pointer
+    svg
+
+

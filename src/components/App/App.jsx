@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,9 +15,11 @@ import Branding from "../Branding/Branding.jsx"
 import UI from "../UI/UI.jsx"
 import content from "../../mocks/content.js"
 
+
+
 const App = () => {
     return (
-        <Router forceRefresh={true}>
+        <Router>
             <div className={"main-wrap"}>
                 <Nav />
 
