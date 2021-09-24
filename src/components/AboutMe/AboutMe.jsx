@@ -6,12 +6,13 @@ const AboutMe = (props) => {
 
     return (
         <div className={`about-me__wrap ${show ? 'about-me__wrap--hidden' : ''}`}>
-            <video loop autoPlay={true} height={"120px"}>
-                <source src="./img/animoji.webm"
-                        type="video/webm" />
-                <source src="./img/animoji.mov"
-                        type="video/mov" />
-            </video>
+            {/*<video loop autoPlay={true} height={"120px"}>*/}
+            {/*    <source src="./img/animoji.webm"*/}
+            {/*            type="video/webm" />*/}
+            {/*    <source src="./img/animoji.mov"*/}
+            {/*            type="video/mov" />*/}
+            {/*</video>*/}
+            <img className={"about-me__face-gif"} src="./img/animoji-150-optimized.gif" alt=""/>
             <p className={"about-me__text"}>
                 Привет, меня зовут Глеб, мне 33 года.
                 Я живу в Санкт-Петербурге и уже больше 10 лет занимаюсь дизайном.
