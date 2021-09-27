@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import { Navigation, A11y, EffectFade, Controller, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,13 +13,33 @@ import 'swiper/css/effect-fade';
 
 const Slider = (props) => {
 
-    let { images, color } = props
+    let { images, color, location } = props
+
+    let currLocation = useLocation();
+
+    // console.log(currLocation);
+    //
+    // useEffect(()=>{
+    //     console.log("location changed")
+    // },[currLocation])
 
     const sliderRotationDelay = 5000;
 
     const [ textSwiper, setTextSwiper ] = useState(null);
     const [ controlledSwiper, setControlledSwiper ] = useState(null);
     const [ mainSwiper, setMainSwiper ] = useState(null);
+
+    useEffect(()=>{
+        if (mainSwiper) {
+            // console.log(mainSwiper)
+            // mainSwiper.destroy()
+            // mainSwiper.init()
+            mainSwiper.setProgress(0, 0)
+            mainSwiper.autoplay.start()
+        } else {
+            console.log("creating new swiper")
+        }
+    },[currLocation])
 
     const mainSlidesMarkup = images.map(item =>
             <SwiperSlide>
@@ -53,6 +74,7 @@ const Slider = (props) => {
                 // onSlideChange={() => console.log('slide change')}
                 onSwiper={setControlledSwiper}
                 className={"text-slider"}
+                style={{backgroundColor: `${color}`}}
             >
                 {textSlidesMarkup}
             </Swiper>
@@ -83,6 +105,7 @@ const Slider = (props) => {
 
                 }}
                 onSwiper={(swiper) => {
+                    setMainSwiper(swiper)
                     swiper.navigation.nextEl.style.animationDuration = `${sliderRotationDelay}ms`
                     swiper.navigation.nextEl.classList.add('slider-next--animate')
                 }}

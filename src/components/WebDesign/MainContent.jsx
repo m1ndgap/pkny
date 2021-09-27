@@ -6,6 +6,7 @@ const MainContent = (props) => {
 
     const { title, text, images, color } = props.data;
 
+
     useEffect(() => {
         if (window.matchMedia("(max-width: 719px)").matches) {
             const goBackBtn = document.querySelector('.main__mobile-goback');
@@ -43,6 +44,7 @@ const MainContent = (props) => {
             <Slider
                 images = { images }
                 color = { color }
+                location = { location }
             />
         </article>
     )

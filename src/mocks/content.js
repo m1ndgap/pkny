@@ -30,7 +30,7 @@ const data = {
                 imgAlt: 'brainfaq.ru',
                 imgDesc: ['Проект портала формата вопрос-ответ', 'brainfaq.ru']
             },
-            {   img: 'web-design-7.png',
+            {   img: 'web-design-8.png',
                 imgAlt: 'Kvartinder',
                 imgDesc: ['Лендинг для мобильного приложения', 'игрового поиска квартир Kvartinder']
             }
@@ -158,6 +158,10 @@ const data = {
             {   img: 'logos-8.png',
                 imgAlt: 'Временное практическое руководство COVID-19',
                 imgDesc: ['Логотип ежегодной премии', 'Russian Coworking Awards']
+            },
+            {   img: 'logo-9-polinmagazin.png',
+                imgAlt: 'Временное практическое руководство COVID-19',
+                imgDesc: ['Логотип и упаковка товаров', 'эко-магазина Polin Magazin']
             }
         ]
     },

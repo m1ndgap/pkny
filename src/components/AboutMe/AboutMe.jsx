@@ -12,15 +12,15 @@ const AboutMe = (props) => {
             {/*    <source src="./img/animoji.mov"*/}
             {/*            type="video/mov" />*/}
             {/*</video>*/}
-            <img className={"about-me__face-gif"} src="./img/animoji-150-optimized.gif" alt=""/>
+            <img className={"about-me__face-gif"} src="./img/pkny-animoji-100-optimized3-reversed.gif" alt=""/>
             <p className={"about-me__text"}>
-                Привет, меня зовут Глеб, мне 33 года.
+                Привет, меня зовут Глеб, мне 33 года. <br/>
                 Я живу в Санкт-Петербурге и уже больше 10 лет занимаюсь дизайном.
-                За это время я реализовал ряд крутых проектов и порадовал не один десяток клиентов.
+                За это время я реализовал ряд крутых проектов и порадовал не один <br/>десяток клиентов.
             </p>
             <ul className={"about-me__links"}>
                 <li className={"about-me__element"}>
-                    <a className={"about-me__link about-me__link--mail"} href="">
+                    <a className={"about-me__link about-me__link--mail"} href="mailto:mail@pkny.ru">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
                             <svg version="1.1" id="Layer_1"  x="0px" y="0px" viewBox="0 0 64 64" >
                                 <path d="M0,0v64h64V0H0z M57,7v7.3L32.3,29.4L7,14.3V7H57z M7,57V22.4l25.4,15.2L57,22.5V57H7z"/>
@@ -30,7 +30,7 @@ const AboutMe = (props) => {
                     </a>
                 </li>
                <li className={"about-me__element"}>
-                    <a className={"about-me__link"} href="">
+                    <a className={"about-me__link"} href="https://t.me/ep5il0n">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 64 64">
                             <path d="M57,7v46.4l-13.5-5.8L42.2,47h-1.4H7V7H57 M64,0H0v54h40.8L64,64V0L64,0z"/>
                             <rect x="21" y="16.5" width="22" height="7"/>
@@ -39,7 +39,7 @@ const AboutMe = (props) => {
                     </a>
                 </li>
                 <li className={"about-me__element"}>
-                    <a className={"about-me__link"} href="">
+                    <a className={"about-me__link"} href="https://instagram.com/pknydesign/">
                         <svg version="1.1" id="Layer_1" viewBox="0 0 64 64" >
                             <g>
                                 <g>

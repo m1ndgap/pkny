@@ -35,19 +35,22 @@
     justify-content: center
     align-items: center
     height: unset
+    overflow: hidden
     picture
       width: 100%
       display: flex
       justify-content: center
+      object-fit: contain
 
       img
         display: block
         object-fit: contain
         @include media("<large")
-          // width: 120%
+          //width: 100%
         @include media("<desktop")
-          // width: 130%
+          //width: 100%
         @include media("<tablet")
+          height: 210px
           width: 100%
 
 .text-slider
@@ -59,6 +62,7 @@
   transform: translateX(-50%)
   z-index: 3 !important
   pointer-events: none !important
+  opacity: 0.9
   @include media("<large")
     top: 2.1rem
   @include media("<desktop")
@@ -94,7 +98,7 @@
   position: absolute
   bottom: 4rem
   left: 50%
-  z-index: 2
+  z-index: 3
   transform: translateX(-50%)
   @include media("<large")
     bottom: 2rem

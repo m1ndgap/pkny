@@ -3,7 +3,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useLocation
 } from "react-router-dom";
 
 
@@ -18,6 +19,7 @@ import content from "../../mocks/content.js"
 
 
 const App = () => {
+
     return (
         <Router>
             <div className={"main-wrap"}>

@@ -80,7 +80,14 @@ const Nav = () => {
 
     return (
         <div className={"nav-wrap"}>
-            <button className="nav__mobileBtn" onClick={toggleMobMenu}>X</button>
+            <button className={`nav__mobileBtn `} onClick={toggleMobMenu}>
+                <div id={`nav__mob-icon`} className={`${ mobMenu ? 'open' : ' '}`}>
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                </div>
+            </button>
             <div ref={gradientContainer} className="gradient-container" > </div>
             <h2 className={"logo nav__logo"}>
                     <svg width="100" height="37" viewBox="0 0 100 37" fill="none" xmlns="http://www.w3.org/2000/svg">
