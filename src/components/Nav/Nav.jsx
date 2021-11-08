@@ -63,7 +63,7 @@ const Nav = () => {
         gradientEl.style.left = `${e.clientX - rect.left - 150}px`
 
         if (prevColor === newBgc) {
-            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0.01) 71%)`
+            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.01) 71%)`
         } else {
             gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 43%, ${prevColor} 71%)`
         }

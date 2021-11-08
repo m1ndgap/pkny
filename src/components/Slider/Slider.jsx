@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Navigation, A11y, EffectFade, Controller, Autoplay } from 'swiper';
+import { Navigation, A11y, EffectFade, Controller, Autoplay, Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import Picture from "./Picture.jsx"
@@ -41,8 +41,8 @@ const Slider = (props) => {
         }
     },[currLocation])
 
-    const mainSlidesMarkup = images.map(item =>
-            <SwiperSlide>
+    const mainSlidesMarkup = images.map((item, index) =>
+            <SwiperSlide key={index}>
                 <picture>
                     <source srcSet={`./img/${item.img} 1x, ./img/${retinaImg(item.img)} 2x`}
                             media={"(min-width: 720px)"} />
@@ -54,14 +54,20 @@ const Slider = (props) => {
             </SwiperSlide>
     );
 
-    const textSlidesMarkup = images.map(item =>
-        <SwiperSlide style={{backgroundColor: `${color}`}}>
+    const textSlidesMarkup = images.map((item, index) =>
+        <SwiperSlide key={index} style={{backgroundColor: `${color}`}}>
             <p>
                 {item.imgDesc[0]}
             </p>
             {item.imgDesc[1] ? <p>{item.imgDesc[1]}</p> : ''}
         </SwiperSlide>
     );
+
+
+    console.log(mainSlidesMarkup)
+    const params = {
+        loop:true
+    }
 
     return (
         <div className={"sliders-wrap"}>
@@ -80,7 +86,6 @@ const Slider = (props) => {
             </Swiper>
 
             <Swiper
-                key={2}
                 modules={[Navigation, A11y, Autoplay]}
                 slidesPerView={1}
                 speed={1000}
@@ -89,7 +94,6 @@ const Slider = (props) => {
                     nextEl: '.slider-next',
                     prevEl: '.slider-prev'}}
                 onSlideChangeTransitionEnd = {(swiper) => {
-
                     if (swiper.autoplay.running){
                         swiper.navigation.nextEl.classList.add('slider-next--animate')
 
@@ -110,6 +114,7 @@ const Slider = (props) => {
                     swiper.navigation.nextEl.classList.add('slider-next--animate')
                 }}
                 className={"main-slider"}
+
             >
                 {mainSlidesMarkup}
                 <div className={"slider__btn-wrap"}>
