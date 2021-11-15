@@ -37,7 +37,7 @@ const Slider = (props) => {
             mainSwiper.setProgress(0, 0)
             mainSwiper.autoplay.start()
         } else {
-            console.log("creating new swiper")
+            // console.log("creating new swiper")
         }
     },[currLocation])
 
@@ -64,32 +64,32 @@ const Slider = (props) => {
     );
 
 
-    console.log(mainSlidesMarkup)
-    const params = {
-        loop:true
-    }
+    // console.log(mainSlidesMarkup)
+    // const params = {
+    //     loop:true
+    // }
 
     return (
         <div className={"sliders-wrap"}>
-            <Swiper
-                modules={[EffectFade, Controller]}
-                effect="fade"
-                fadeEffect={"crossFade: true"}
-                slidesPerView={1}
-                allowTouchMove="false"
-                // onSlideChange={() => console.log('slide change')}
-                onSwiper={setControlledSwiper}
-                className={"text-slider"}
-                style={{backgroundColor: `${color}`}}
-            >
-                {textSlidesMarkup}
-            </Swiper>
+            {/*<Swiper*/}
+            {/*    modules={[EffectFade, Controller]}*/}
+            {/*    effect="fade"*/}
+            {/*    fadeEffect={"crossFade: true"}*/}
+            {/*    slidesPerView={1}*/}
+            {/*    allowTouchMove="false"*/}
+            {/*    // onSlideChange={() => console.log('slide change')}*/}
+            {/*    onSwiper={setControlledSwiper}*/}
+            {/*    className={"text-slider"}*/}
+            {/*    style={{backgroundColor: `${color}`}}*/}
+            {/*>*/}
+            {/*    {textSlidesMarkup}*/}
+            {/*</Swiper>*/}
 
             <Swiper
                 modules={[Navigation, A11y, Autoplay]}
                 slidesPerView={1}
                 speed={1000}
-                controller={{ control: controlledSwiper }}
+                // controller={{ control: controlledSwiper }}
                 navigation={{
                     nextEl: '.slider-next',
                     prevEl: '.slider-prev'}}

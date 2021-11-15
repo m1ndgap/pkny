@@ -96,13 +96,14 @@
 
 .slider__btn-wrap
   position: absolute
-  bottom: 4rem
-  left: 50%
+  top: 3rem
+  left: 3rem
   z-index: 3
-  transform: translateX(-50%)
   @include media("<large")
+    top: unset
     bottom: 2rem
   @include media("<desktop")
+    top: unset
     bottom: 1rem
   @include media("<tablet")
 
