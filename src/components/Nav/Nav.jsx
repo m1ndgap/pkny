@@ -27,8 +27,11 @@ const Nav = () => {
         const currentLink = linkEls.filter(link => link.classList.contains('active') === true);
         if (currentLink.length > 0) {
             const color = currentLink[0].dataset.color;
-            navWrap.style.backgroundColor = color;
+            //navWrap.style.backgroundColor = color;
             gradientContainer.current.style.backgroundColor = color;
+            const timeout = setTimeout(() => {
+                gradientContainer.current.style.transition = "background-color 500ms 3000ms"
+            }, 50)
             setPrevColor(color);
         } else {
             gradientContainer.current.style.backgroundColor = '#1BBD5C';
@@ -63,7 +66,7 @@ const Nav = () => {
         gradientEl.style.left = `${e.clientX - rect.left - 150}px`
 
         if (prevColor === newBgc) {
-            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.01) 71%)`
+            gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 30%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.02) 71%)`
         } else {
             gradientEl.style.backgroundImage = `radial-gradient(circle at center, ${newBgc} 43%, ${prevColor} 71%)`
         }

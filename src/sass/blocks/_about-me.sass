@@ -1,6 +1,5 @@
 .about-me
 
-
   &__wrap
     margin-top: auto
     z-index: 2
@@ -60,8 +59,9 @@
         height: 22px
 
     &:hover
-      svg
-        transform: scale(1.1)
+      @include media(">tablet")
+        svg
+          transform: scale(1.1)
 
     &--mail
       padding-bottom: 1px
