@@ -98,14 +98,12 @@
   position: absolute
   top: 4rem
   left: 4rem
-  z-index: 3
-  @include media("<large")
-    top: unset
-    bottom: 2rem
+  z-index: 4
   @include media("<desktop")
-    top: unset
-    bottom: 1rem
-  @include media("<tablet")
+    top: 2rem
+    left: 2rem
+    z-index: 4
+
 
   button
     width: 50px

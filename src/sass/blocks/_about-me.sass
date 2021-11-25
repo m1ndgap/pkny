@@ -34,9 +34,10 @@
     margin: 0 0 0.2rem -1rem
     display: flex
     flex-flow: row wrap
+    flex-shrink: 0
 
   &__element
-
+    flex-shrink: 0
 
 
   &__link
@@ -53,6 +54,7 @@
       width: 28px
       height: 28px
       fill: $white
+      will-change: transform
       transition: transform $transition
       @include media("<tablet")
         width: 22px
@@ -63,14 +65,14 @@
         svg
           transform: scale(1.1)
 
-    &--mail
-      padding-bottom: 1px
-      svg
-        width: 34px
-        height: 34px
-        @include media("<tablet")
-          width: 28px
-          height: 28px
+    //&--mail
+    //  padding-bottom: 1px
+    //  svg
+    //    width: 34px
+    //    height: 34px
+    //    @include media("<tablet")
+    //      width: 28px
+    //      height: 28px
 
 
     @include media("<large")
