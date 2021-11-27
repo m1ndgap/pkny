@@ -43,9 +43,10 @@ const Nav = () => {
         if (window.matchMedia("(max-width: 719px)").matches) {
             const navItems = document.querySelectorAll('.nav__el');
             const mainWrap = document.querySelector('.main');
-            mainWrap.classList.add('main--mobShow')
+
             navItems.forEach((item) => {
                 item.addEventListener('click', () => {
+                    mainWrap.classList.remove('main--mobHide')
                     mainWrap.classList.add('main--mobShow')
                 })
             })

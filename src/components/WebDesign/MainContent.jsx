@@ -14,6 +14,7 @@ const MainContent = (props) => {
             mainWrap.classList.remove('main--mobShow')
             goBackBtn.addEventListener('click', () => {
                 mainWrap.classList.remove('main--mobShow')
+                mainWrap.classList.add('main--mobHide')
             })
         }
     },[])
