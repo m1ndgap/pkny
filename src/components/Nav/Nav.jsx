@@ -83,13 +83,10 @@ const Nav = () => {
 
     return (
         <div className={"nav-wrap"}>
-            <button className={`nav__mobileBtn `} onClick={toggleMobMenu}>
-                <div id={`nav__mob-icon`} className={`${ mobMenu ? 'open' : ' '}`}>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                </div>
+            <button className={`nav__mobileBtn hamburger hamburger--collapse ${ mobMenu ? 'is-active' : ' '}`} type="button" onClick={toggleMobMenu}>
+                <span className="hamburger-box">
+                    <span className="hamburger-inner"></span>
+                </span>
             </button>
             <div ref={gradientContainer} className="gradient-container" > </div>
             <h2 className={"logo nav__logo"}>
