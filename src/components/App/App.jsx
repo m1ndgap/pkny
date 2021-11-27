@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,7 +18,19 @@ import content from "../../mocks/content.js"
 
 
 
+
+
 const App = () => {
+
+    useEffect(() => {
+        // mobile vh hack
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+    })
 
     return (
         <Router>
