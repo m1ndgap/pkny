@@ -15,8 +15,7 @@ const AboutMe = (props) => {
             <img className={"about-me__face-gif"} src="./img/pkny-animoji-100-optimized3-reversed.gif" alt=""/>
             <p className={"about-me__text"}>
                 Привет, меня зовут Глеб, мне 33 года. <br/>
-                Я живу в Санкт-Петербурге и уже больше 10 лет занимаюсь дизайном.
-                За это время я реализовал ряд крутых проектов и порадовал не один <br/>десяток клиентов.
+                Я живу в Санкт-Петербурге и уже<br/>больше 12 лет занимаюсь дизайном.
             </p>
             <ul className={"about-me__links"}>
                 <li className={"about-me__element"}>
