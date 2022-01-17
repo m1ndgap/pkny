@@ -13,14 +13,14 @@
 .main-slider
   z-index: 2
   width: 780px
-  height: 540px
+  height: 588px
   background-color: #E1E1E1
   @include media("<large")
-    width: 540px
-    height: 450px
+    width: 648px
+    height: 488px
   @include media("<desktop")
-    width: 370px
-    height: 330px
+    width: 500px
+    height: 378px
   @include media("<tablet")
     width: 100%
     height: 210px
@@ -41,7 +41,6 @@
       display: flex
       justify-content: center
       object-fit: contain
-
       img
         display: block
         object-fit: contain
@@ -53,7 +52,7 @@
           height: 210px
           width: 100%
 
-.text-slider
+//.text-slider
   width: calc(100% - 80px)
   height: 50px
   position: absolute !important
@@ -96,10 +95,13 @@
 
 .slider__btn-wrap
   position: absolute
-  top: 4rem
-  left: 4rem
+  top: 3rem
+  left: 3rem
   z-index: 4
   -webkit-transform: translate3d(0, 0, 0)
+  @include media("<large")
+    top: 2.5rem
+    left: 2.5rem
   @include media("<desktop")
     top: 1.5rem
     left: 1.5rem
@@ -107,8 +109,8 @@
 
 
   button
-    width: 50px
-    height: 50px
+    width: 4rem
+    height: 4rem
     padding: 0
     outline: none
     border: none
@@ -121,6 +123,11 @@
       fill: $white
     &:hover
       opacity: 0.8
+    @include media("<large")
+      width: 3.2rem
+      height: 3.2rem
+    @include media("<desktop")
+
     @include media("<tablet")
       width: 35px
       height: 35px

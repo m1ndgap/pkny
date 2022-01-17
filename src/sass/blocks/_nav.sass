@@ -10,12 +10,13 @@
   color: $white
   overflow: hidden
   @include media("<large")
-    padding: 20px
-    height: 800px
-    width: 360px
+    padding: 3rem 3.3rem 2.6rem 3.3rem
+    height: 488px
+    width: 232px
   @include media("<desktop")
-    height: 660px
-    width: 290px
+    padding: 2.1rem 2.5rem 2.1rem 2.5rem
+    height: 378px
+    width: 180px
   @include media("<tablet")
     height: 360px
     width: 280px
@@ -68,7 +69,8 @@
   list-style: none
   @include media("<large")
     margin: 0 -20px
-    margin-right: -20px
+  @include media("<desktop")
+    margin: 7px -12px
   @include media("<tablet")
     position: absolute
     opacity: 0
@@ -95,7 +97,7 @@
   font-weight: 600
   user-select: none
   transition: background-color $transition, font-weight $transition*2
-  &:after
+  //&:after
     content: ""
     position: absolute
     right: 16px
@@ -111,24 +113,31 @@
   &.active
     background-color: rgba(255, 255, 255, 0.15)
     transition: background-color $transition, text-shadow $transition
-    &:after
+    //&:after
       opacity: 1
       transform: translate(0, -50%) rotate(45deg)
 
   &:hover
     background-color: rgba(255, 255, 255, 0.15)
-
+  @include media("<large")
+    font-size: 1.3rem
+    padding: 0.9rem 0 0.9rem 1.9rem
   @include media("<desktop")
-    font-size: 1.6rem
-    padding: 1.3rem 0 1.3rem 1.9rem
+    font-size: 1.1rem
+    padding: 0.5rem 0 0.5rem 1.4rem
 
 .nav__logo
   margin: 3px 0 16px 0
   z-index: 2
-  @include media("<desktop")
-    margin: 3px 0 11px 0
+  @include media("<large")
+    margin: 0 0 11px 0
     svg
-      width: 78px
+      width: 65px
+  @include media("<desktop")
+    margin: 0
+    height: 25px
+    svg
+      width: 56px
 
 .nav__mobileBtn
   display: none

@@ -14,8 +14,8 @@ const AboutMe = (props) => {
             {/*</video>*/}
             <img className={"about-me__face-gif"} src="./img/pkny-animoji-100-optimized3-reversed.gif" alt=""/>
             <p className={"about-me__text"}>
-                Привет, меня зовут Глеб, мне 33 года. <br/>
-                Я живу в Санкт-Петербурге и уже<br/>больше 12 лет занимаюсь дизайном.
+                Привет, меня зовут Глеб, мне 33 года. <br className={"about-me__text-br"} />
+                Я живу в Санкт-Петербурге и уже <br className={"about-me__text-br"} />больше 12 лет занимаюсь дизайном.
             </p>
             <ul className={"about-me__links"}>
                 <li className={"about-me__element"}>
