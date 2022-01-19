@@ -57,20 +57,17 @@
 
 
 .main__section-title
-  margin: 0 0 27px 0
+  display: none
   @include media("<large")
-    margin: 0 0 16px 0
+    display: none
   @include media("<desktop")
-    margin: 0 0 13px 0
+    display: none
   @include media("<tablet")
-
+    display: inline
 
 
 .main__text-wrap
-  padding: 3.4rem 4rem 0
-  @include media("<large")
-    padding-top: 1.8rem
-  @include media("<desktop")
+  @include media("<tablet")
     padding: 0.5rem 2rem 0
 
 

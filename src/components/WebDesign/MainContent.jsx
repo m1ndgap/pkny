@@ -38,7 +38,10 @@ const MainContent = (props) => {
                     <path d="M8,1L0,9l8,8l2.3-2.3L4.5,9l5.7-5.7L8,1z"/>
                 </svg>
             </button>
+            <div className={'main__text-wrap'}>
+                <h1 className={'main__section-title section-title'}>{title}</h1>
 
+            </div>
             <Slider
                 images = { images }
                 color = { color }

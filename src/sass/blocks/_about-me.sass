@@ -11,7 +11,7 @@
       pointer-events: none
 
   &__text
-    margin: 0 -2rem 1.4rem 0
+    margin: 0 -2rem 1rem 0
     font-size: 1.1rem
     line-height: 1.8rem
     padding-right: 23px
@@ -19,30 +19,54 @@
     font-weight: 400
     color: $white
     @include media("<large")
+      padding-right: 10px
       margin-bottom: 1rem
       font-size: 1rem
       line-height: 1.6rem
     @include media("<desktop")
-      margin-bottom: 1.9rem
-      padding-right: 10px
-      font-size: 1.2rem
-      line-height: 1.8rem
+      padding-right: 15px
+      font-size: 0.9rem
+      line-height: 1.4rem
     @include media("<tablet")
       margin: 0.5rem 0
+      font-size: 1.2rem
+      line-height: 1.8rem
 
-  &__text-br
+  &__text-br-md
     @include media("<large")
       display: none
 
+  &__text-br-sm
+    display: none
+    @include media("<large")
+      display: inline
+    @include media("<desktop")
+      display: none
+    @include media("<tablet")
+      display: none
+
+  &__text-br-xs
+    display: none
+    @include media("<large")
+      display: none
+    @include media("<desktop")
+      display: inline
+    @include media("<tablet")
+      display: none
+
+
   &__links
     @include resetlist()
-    margin: 0 0 0.2rem 0rem
+    margin: 0 0 0.2rem -0.4rem
     display: flex
     flex-flow: row wrap
     flex-shrink: 0
     @include media("<large")
       margin-left: -0.6rem
-
+    @include media("<desktop")
+      margin-left: -0.1rem
+    @include media("<tablet")
+      margin: 1.7rem 0 1.7rem -0.2rem
   &__element
     flex-shrink: 0
 
@@ -55,12 +79,17 @@
     height: 28px
     margin-right: 10px
     color: $white
+    //noinspection ALL
     @include media("<large")
       width: 26px
       height: 26px
-      span
-        font-size: 1.2rem
-
+    @include media("<desktop")
+      width: 20px
+      height: 20px
+      margin-right: 14px
+    @include media("<tablet")
+      width: 26px
+      height: 26px
 
     svg
       width: 18px
@@ -71,6 +100,9 @@
       @include media("<large")
         width: 16px
         height: 16px
+      @include media("<desktop")
+        width: 14px
+        height: 14px
       @include media("<tablet")
         width: 22px
         height: 22px
@@ -94,11 +126,16 @@
     display: block
     margin: 1rem -2rem 0 0
     opacity: 0.5
+    font-size: 1.1rem
     a
       color: $white
     @include media("<large")
       font-size: 1rem
+    @include media("<desktop")
+      font-size: 0.9rem
+      margin-top: 0.5rem
     @include media("<tablet")
+      font-size: 1.1rem
       margin-top: 0.5rem
 
 
@@ -109,5 +146,8 @@
     width: 66px
     margin: 0 0 3px -15px
   @include media("<desktop")
-    width: 66px
-    margin-left: -19px
+    width: 50px
+    margin-left: -9px
+  @include media("<tablet")
+    width: 100px
+    margin-left: -21px
