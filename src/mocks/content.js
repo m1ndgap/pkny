@@ -159,7 +159,7 @@ const data = {
                 imgAlt: 'Временное практическое руководство COVID-19',
                 imgDesc: ['Логотип ежегодной премии', 'Russian Coworking Awards']
             },
-            {   img: 'logo-9.png',
+            {   img: 'logos-9.png',
                 imgAlt: 'Временное практическое руководство COVID-19',
                 imgDesc: ['Логотип и упаковка товаров', 'эко-магазина Polin Magazin']
             }
