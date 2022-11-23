@@ -14,12 +14,9 @@ const AboutMe = (props) => {
             {/*</video>*/}
             <img className={"about-me__face-gif"} src="./img/pkny-animoji-100-optimized3-reversed.gif" alt=""/>
             <p className={"about-me__text"}>
-                hi there! my name is Gleb Peknyi.
-                <br/>
-                i am a graphic and web designer
-                <br/>
-                residing in Saint-Petersburg, Russia.
-          	</p>
+                Привет, меня зовут Глеб,<br className={"about-me__text-br-xs"} /> мне <br className={"about-me__text-br-sm"} />33 года. <br className={"about-me__text-br-md"} />
+                Я живу в Санкт-Петербурге <br className={"about-me__text-br-sm"} />и уже <br className={"about-me__text-br-md"} />больше <br className={"about-me__text-br-xs"} />12 лет занимаюсь дизайном.
+            </p>
             <ul className={"about-me__links"}>
                 <li className={"about-me__element"}>
                     <a className={"about-me__link about-me__link--mail"} href="mailto:mail@pkny.ru">
