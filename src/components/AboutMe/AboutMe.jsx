@@ -54,7 +54,7 @@ const AboutMe = (props) => {
 
             </ul>
             <small className={"about-me__copyright"}>
-                <span>2021 © pkny.ru | code by <a href="https://github.com/m1ndgap">mindgap</a></span>
+                <span>2022 © pkny.ru | code by <a href="https://github.com/m1ndgap">mindgap</a></span>
             </small>
         </div>
     )
