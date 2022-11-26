@@ -71,7 +71,7 @@
   @include media("<large")
     margin: 0 -20px
   @include media("<desktop")
-    margin: 7px -12px
+    margin: 7px -20px
   @include media("<tablet")
     position: absolute
     opacity: 0
@@ -117,6 +117,8 @@
     //&:after
       opacity: 1
       transform: translate(0, -50%) rotate(45deg)
+    @include media("<desktop")
+      background-color: transparent
 
   &:hover
     background-color: rgba(255, 255, 255, 0.15)
@@ -125,7 +127,10 @@
     padding: 0.9rem 0 0.9rem 1.9rem
   @include media("<desktop")
     font-size: 1.1rem
-    padding: 0.6rem 0 0.6rem 1.4rem
+    padding: 0.6rem 0 0.6rem 2rem
+  @include media("<tablet")
+    background-color: transparent
+    font-size: 1.8rem
 
 .nav__logo
   margin: 3px 0 16px 0
@@ -141,6 +146,7 @@
       width: 56px
   @include media("<tablet")
     margin-left: -1rem
+    margin-bottom: 20px
     svg
       width: 100px
 
